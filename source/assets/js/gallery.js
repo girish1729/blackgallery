@@ -1,34 +1,10 @@
 var imageList = [{
-        "src": "assets/img/1.jpg",
+        "src": "https://source.unsplash.com/featured/800x600",
         "alt": "Beautiful scenery I "
     },
     {
-        "src": "assets/img/2.jpg",
+        "src": "https://source.unsplash.com/featured/700x500",
         "alt": "Beautiful scenery II "
-    },
-    {
-        "src": "assets/img/3.jpg",
-        "alt": "Beautiful scenery III "
-    },
-    {
-        "src": "assets/img/4.jpg",
-        "alt": "Beautiful scenery IV "
-    },
-    {
-        "src": "assets/img/5.jpg",
-        "alt": "Beautiful scenery V"
-    },
-    {
-        "src": "assets/img/6.jpg",
-        "alt": "Beautiful scenery VI "
-    },
-    {
-        "src": "assets/img/7.jpg",
-        "alt": "Beautiful scenery VII"
-    },
-    {
-        "src": "assets/img/8.jpg",
-        "alt": "Beautiful scenery VII "
     },
 ];
 function loadImagesToDiv() {

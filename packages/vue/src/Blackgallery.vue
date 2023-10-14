@@ -3,48 +3,17 @@
 export default {
     data() {
   	return {
-	galleryArea: '',
 imageList:  [{
-        "src": "assets/img/1.jpg",
+        "src": "https://source.unsplash.com/featured/800x600",
         "alt": "Beautiful scenery I ",
 	isActive: false,
     },
     {
-        "src": "assets/img/2.jpg",
+        "src": "https://source.unsplash.com/featured/700x500",
         "alt": "Beautiful scenery II ",
 	isActive: false,
     },
-    {
-        "src": "assets/img/3.jpg",
-        "alt": "Beautiful scenery III ",
-	isActive: false,
-    },
-    {
-        "src": "assets/img/4.jpg",
-        "alt": "Beautiful scenery IV ",
-	isActive: false,
-    },
-    {
-        "src": "assets/img/5.jpg",
-        "alt": "Beautiful scenery V",
-	isActive: false,
-    },
-    {
-        "src": "assets/img/6.jpg",
-        "alt": "Beautiful scenery VI ",
-	isActive: false,
-    },
-    {
-        "src": "assets/img/7.jpg",
-        "alt": "Beautiful scenery VII",
-	isActive: false,
-    },
-    {
-        "src": "assets/img/8.jpg",
-        "alt": "Beautiful scenery VII ",
-	isActive: false,
-    },
-]
+    ]
  }
  }, methods: {
 	switchImage(idx) {
@@ -60,7 +29,7 @@ imageList:  [{
 
  <h1> Blackgallery </h1>
 
-<section class="gallery clearfix">
+<div class="gallery clearfix">
   <!-- Images are shown in this container on switching -->
   <div v-for="(item,id) in imageList" :key="id" class="gallery-container clearfix">
      <div v-if="id == 0">
@@ -84,9 +53,9 @@ imageList:  [{
 "(item.isActive)? 'switch-image':''" ></li>
     </ul>
   </nav>
-</section>
+</div>
 </template>
 
 <style scoped>
-@import url("assets/css/gallery.css");
+@import url("https://cdn.jsdelivr.net/gh/girish1729/blackgallery/source/assets/css/gallery.css");
 </style>

@@ -1,6 +1,5 @@
 body {
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
     justify-items: center;
     align-items: center;
 }
@@ -53,7 +52,6 @@ figcaption {
 ul.gallery-nav {
     margin-top: 10px;
     margin: 0 auto;
-    text-align: center;
 }
 
 ul.gallery-nav li {
