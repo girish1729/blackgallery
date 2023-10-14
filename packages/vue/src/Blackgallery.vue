@@ -13,11 +13,18 @@ imageList:  [{
         "alt": "Beautiful scenery II ",
 	isActive: false,
     },
+    {
+        "src": "https://source.unsplash.com/featured/900x600",
+        "alt": "Beautiful scenery III ",
+	isActive: false,
+    },
     ]
  }
  }, methods: {
 	switchImage(idx) {
 		this.imageList[idx].isActive = true;
+		console.log(idx);
+		console.log("I am switching image now");
 	}
  }
 
@@ -29,31 +36,32 @@ imageList:  [{
 
  <h1> Blackgallery </h1>
 
-<div class="gallery clearfix">
   <!-- Images are shown in this container on switching -->
-  <div v-for="(item,id) in imageList" :key="id" class="gallery-container clearfix">
+  <div  class="gallery-container">
+    <div v-for="(item,id) in imageList" :key="id">
+
      <div v-if="id == 0">
-	<figure id="start" class="gallery-display show-image" >
+	<figure :id="start" class="gallery-display show-image" >
 		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
 	</figure>
       </div>
+
       <div v-else>
-	<figure id="id+'-img'" v-bind:class = "(item.isActive)? 'gallery-display show-image':'gallery-display'" >
+	<figure :id="id+'-img'" v-bind:class = "(item.isActive)? 'gallery-display show-image':'gallery-display'" >
 		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
 	</figure>
       </div>
-  </div>
+
+     </div>
 
   <!-- XXX This is the gallery switcher -->
-  <nav>
-    <ul v-for="(item, id) in imageList" :key="id" class="gallery-nav"> 
-       <li id="id" @click="$emit('switchImage', id)" v-bind:class =
-"(item.isActive)? 'switch-image':''" ></li>
+    <ul class="gallery-nav"> 
+       <li v-for="(item, id) in imageList" :key="id" :id="id" @click="$emit('switchImage', id)" v-bind:class = "(item.isActive)? 'switch-image':''" ></li>
     </ul>
-  </nav>
 </div>
+
 </template>
 
 <style scoped>

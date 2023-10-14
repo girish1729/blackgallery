@@ -52,6 +52,8 @@ figcaption {
 ul.gallery-nav {
     margin-top: 10px;
     margin: 0 auto;
+    display: inline;
+    position: relative;
 }
 
 ul.gallery-nav li {
