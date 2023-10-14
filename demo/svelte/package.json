@@ -1,9 +1,10 @@
 {
-  "name": "gallery-svelte-demo",
+  "name": "blackgallery-svelte-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "dependencies": {
+    "blackgallery-svelte": "file:../../packages/svelte/package"
   },
   "scripts": {
     "dev": "vite",

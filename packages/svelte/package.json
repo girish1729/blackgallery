@@ -1,5 +1,5 @@
 {
-	"name": "progress-up-svelte",
+	"name": "blackgallery-svelte",
 	"version": "1.0.1",
 	"scripts": {
 		"dev": "vite dev",

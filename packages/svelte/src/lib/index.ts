@@ -1,2 +1,2 @@
-import './assets/css/gallery.css';
-export { default as Gallery} from './Gallery.svelte';
+import './style.css';
+export { default as Blackgallery} from './Blackgallery.svelte';

@@ -1,6 +1,6 @@
-import {Gallery} from 'gallery-svelte';
+import {Blackgallery} from 'blackgallery-svelte';
 
-const app = new Gallery({
+const app = new Blackgallery({
   target: document.getElementById('app')
 })
 
