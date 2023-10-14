@@ -22,6 +22,9 @@ imageList:  [{
  }
  }, methods: {
 	switchImage(idx) {
+		for(let i = 0; i < this.imageList.length; i++) {
+			this.imageList[i].isActive = false;
+		}
 		this.imageList[idx].isActive = true;
 		console.log(idx);
 		console.log("I am switching image now");
@@ -35,13 +38,19 @@ imageList:  [{
 <template>
 
  <h1> Blackgallery </h1>
+  <!-- XXX This is the gallery switcher -->
+    <ul class="gallery-nav"> 
+       <li v-for="(item, id) in imageList" :key="id" :id="id"
+@click="switchImage(id)" v-bind:class="(item.isActive)? 'switch-image':''" ></li>
+    </ul>
+
 
   <!-- Images are shown in this container on switching -->
   <div  class="gallery-container">
     <div v-for="(item,id) in imageList" :key="id">
 
      <div v-if="id == 0">
-	<figure :id="start" class="gallery-display show-image" >
+	<figure id="start" class="gallery-display show-image" >
 		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
 	</figure>
@@ -56,10 +65,6 @@ imageList:  [{
 
      </div>
 
-  <!-- XXX This is the gallery switcher -->
-    <ul class="gallery-nav"> 
-       <li v-for="(item, id) in imageList" :key="id" :id="id" @click="$emit('switchImage', id)" v-bind:class = "(item.isActive)? 'switch-image':''" ></li>
-    </ul>
 </div>
 
 </template>

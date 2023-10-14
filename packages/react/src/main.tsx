@@ -1,11 +1,11 @@
-import Gallery from './Gallery';
-export default Gallery;
+import Blackgallery from './Blackgallery';
+export default Blackgallery;
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <div>
-    <Gallery  />
+    <Blackgallery  />
   </div>
 )
 
