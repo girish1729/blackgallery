@@ -1,0 +1,73 @@
+body {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+
+h1 {
+    display: flex;
+    align-items: center;
+}
+
+figure {
+    margin: auto;
+    padding: 4px;
+}
+
+
+figcaption {
+    background-color: black;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+}
+
+
+
+.gallery-container {
+    position: relative;
+}
+
+.gallery-container figure {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.gallery-container #start {
+    position: relative;
+    border: thin silver solid;
+}
+
+.gallery-container .show-image {
+    opacity: 1;
+    border: thin silver solid;
+    -webkit-transition: 2.5s;
+}
+
+ul.gallery-nav {
+    margin-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul.gallery-nav li {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    -webkit-border-radius: 8px;
+    background: #ccc;
+}
+
+ul.gallery-nav li:hover,
+ul.gallery-nav li:focus,
+ul.gallery-nav li.switch-image {
+    -webkit-box-shadow: none;
+    background: blue;
+}

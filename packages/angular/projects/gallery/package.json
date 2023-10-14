@@ -1,0 +1,12 @@
+{
+  "name": "gallery-angular",
+  "version": "0.0.7",
+  "sideEffects": true,
+  "peerDependencies": {
+    "@angular/common": "*",
+    "@angular/core": "*"
+  },
+  "dependencies": {
+    "tslib": "*"
+  }
+}
