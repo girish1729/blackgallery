@@ -6,16 +6,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "progress-up": {
+    "blackgallery": {
       "projectType": "library",
-      "root": "projects/progress-up",
-      "sourceRoot": "projects/progress-up/src",
+      "root": "projects/blackgallery",
+      "sourceRoot": "projects/blackgallery/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
 	  "options": {
-            "outputPath": "dist/progress-up",
+            "outputPath": "dist/blackgallery",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,32 +26,17 @@
             ],
             "styles": [
               "src/styles.css"
-              ,
-              {
-                "input":
-"projects/progress-up/assets/progressBar/loading-bar.css",
-                "inject": true,
-                "bundleName": "loading-bar.css"
-              }
-            ],
-            "scripts": [
-              {
-                "input": "projects/progress-up/assets/progressBar/loading-bar.js",
-                "inject": true,
-                "bundleName": "loading-bar.js"
-              }
-
-            ]
+                      ]
           },
           "options": {
-            "project": "projects/progress-up/ng-package.json"
+            "project": "projects/blackgallery/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/progress-up/tsconfig.lib.prod.json"
+              "tsConfig": "projects/blackgallery/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/progress-up/tsconfig.lib.json"
+              "tsConfig": "projects/blackgallery/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -59,13 +44,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/progress-up/src/test.ts",
-            "tsConfig": "projects/progress-up/tsconfig.spec.json",
-            "karmaConfig": "projects/progress-up/karma.conf.js"
+            "main": "projects/blackgallery/src/test.ts",
+            "tsConfig": "projects/blackgallery/tsconfig.spec.json",
+            "karmaConfig": "projects/blackgallery/karma.conf.js"
           }
         }
      }
      }
   },
-  "defaultProject": "progress-up"
+  "defaultProject": "blackgallery"
 }

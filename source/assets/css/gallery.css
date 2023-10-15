@@ -5,11 +5,6 @@ body {
 }
 
 
-h1 {
-    display: flex;
-    align-items: center;
-}
-
 figure {
     margin: auto;
     padding: 4px;

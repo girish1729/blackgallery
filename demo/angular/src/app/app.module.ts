@@ -3,20 +3,17 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ProgressUpModule } from 'progress-up-angular';
+import { BlackgalleryModule } from 'blackgallery-angular';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    ProgressUpModule,
-    FormsModule,
-    ReactiveFormsModule
+    BlackgalleryModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
