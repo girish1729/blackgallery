@@ -1,17 +1,17 @@
 {
-  "name": "gallery-react",
+  "name": "blackgallery-react",
   "version": "0.0.7",
   "type": "module",
-  "style": "./dist/gallery.css",
+  "style": "./dist/blackgallery.css",
   "files": [
     "dist"
   ],
-  "main": "./dist/gallery.umd.cjs",
-  "module": "./dist/gallery.ts",
+  "main": "./dist/blackgallery.umd.cjs",
+  "module": "./dist/blackgallery.ts",
   "exports": {
     ".": {
-      "import": "./dist/gallery.js",
-      "require": "./dist/gallery.umd.cjs"
+      "import": "./dist/blackgallery.js",
+      "require": "./dist/blackgallery.umd.cjs"
     }
   },
   "scripts": {

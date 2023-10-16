@@ -1,56 +1,53 @@
-
 <script lang="ts">
- 
-export default {
-    data() {
-  	return {
-imageList:  [{
-        "src": "https://source.unsplash.com/featured/800x600",
-        "alt": "Beautiful scenery I ",
-	isActive: false,
-    },
-    {
-        "src": "https://source.unsplash.com/featured/700x500",
-        "alt": "Beautiful scenery II ",
-	isActive: false,
-    },
-    {
-        "src": "https://source.unsplash.com/featured/900x600",
-        "alt": "Beautiful scenery III ",
-	isActive: false,
-    },
-    ]
+ import images from '../images';
+ export default {
+     data() {
+         return {
+             imageList: [],
+	     emptyMsg: `
+
+		<h2> Please configure by inserting images and caption
+		using images.js file </h2>
+		
+		<pre>
+		 const images = [{
+        		"src": "https://source.unsplash.com/featured/800x600",
+        		"alt": "Beautiful scenery I "
+    		},
+    		{
+        		"src": "https://source.unsplash.com/featured/700x500",
+        		"alt": "Beautiful scenery II "
+    		}
+		];
+	  `
+         }
+     },
+     methods: {
+         switchImage(idx) {
+             for (let i = 0; i < this.imageList.length; i++) {
+                 this.imageList[i].isActive = false;
+             }
+             this.imageList[idx].isActive = true;
+             console.log(idx);
+             console.log("I am switching image now");
+         }
+     },
+     beforeMount() {
+	 this.imageList = images;
+	 console.log(images);
+         const options = {
+             saveInCookies: false,
+             label: '🌓',
+         }
+
+         const darkmode = new Darkmode(options);
+         darkmode.showWidget();
+     }
  }
- }, methods: {
-	switchImage(idx) {
-		for(let i = 0; i < this.imageList.length; i++) {
-			this.imageList[i].isActive = false;
-		}
-		this.imageList[idx].isActive = true;
-		console.log(idx);
-		console.log("I am switching image now");
-	} 
- }, beforeMount() {
-const options = {
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
-
-      const darkmode = new Darkmode(options);
-      darkmode.showWidget();
-}
-
-
-}
 </script>
 
 <template>
 
- 
  <h1> Blackgallery </h1>
   <!-- XXX This is the gallery switcher -->
     <ul class="gallery-nav"> 
@@ -61,6 +58,9 @@ const options = {
 
   <!-- Images are shown in this container on switching -->
   <div  class="gallery-container">
+
+     <div v-html="emptyMsg" v-if="imageList.length == 0">
+     </div>
     <div v-for="(item,id) in imageList" :key="id">
 
      <div v-if="id == 0">

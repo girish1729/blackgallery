@@ -1,18 +1,9 @@
-var imageList = [{
-        "src": "https://source.unsplash.com/featured/800x600",
-        "alt": "Beautiful scenery I "
-    },
-    {
-        "src": "https://source.unsplash.com/featured/700x500",
-        "alt": "Beautiful scenery II "
-    },
-];
 function loadImagesToDiv() {
     var galleryArea = document.getElementById("galleryArea");
     var listImages = document.getElementById("listImages");
-    for (var i = 0; i < imageList.length; i++) {
-        var src = imageList[i].src;
-        var caption = imageList[i].alt;
+    for (var i = 0; i < images.length; i++) {
+        var src = images[i].src;
+        var caption = images[i].alt;
         if (i == 0) {
             galleryArea.innerHTML += "\n\t<figure id=\"start\" class=\"gallery-display show-image\" >\n\t\t<img  src=\"".concat(src, "\"   />\n  \t\t<figcaption>").concat(caption, "</figcaption>\n\t</figure>\n\t");
             listImages.innerHTML += "\n\t\t<li id=\"".concat(i, "\" class=\"switch-image\"></li>\n\t\t");
@@ -21,6 +12,9 @@ function loadImagesToDiv() {
             galleryArea.innerHTML += "\n\t<figure id=\"".concat(i, "-img\" class=\"gallery-display\" >\n\t\t<img  src=\"").concat(src, "\"   />\n  \t\t<figcaption>").concat(caption, "</figcaption>\n\t</figure>\n\t");
             listImages.innerHTML += "\n\t\t<li id=\"".concat(i, "\"></li>\n\t\t");
         }
+    }
+    if (images.length == 0) {
+        galleryArea.innerHTML = "\n\t\t<h2> Please configure by inserting images and caption\n\t\tusing images.js file </h2>\n\t\t\n\t\t<pre>\n\t\t const images = [{\n        \t\t\"src\": \"https://source.unsplash.com/featured/800x600\",\n        \t\t\"alt\": \"Beautiful scenery I \"\n    \t\t},\n    \t\t{\n        \t\t\"src\": \"https://source.unsplash.com/featured/700x500\",\n        \t\t\"alt\": \"Beautiful scenery II \"\n    \t\t}\n\t\t];\n\t\t</pre>\n\t";
     }
 }
 loadImagesToDiv();

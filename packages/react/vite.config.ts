@@ -9,8 +9,8 @@ export default defineConfig({
     cssCodesplit: true,
     lib: {
       entry: resolve(__dirname, 'src/main.tsx'),
-      name: 'ProgressUp',
-      fileName: 'progress-up'
+      name: 'Blackgallery',
+      fileName: 'blackgallery'
     },
     rollupOptions: {
       external: ['react', 'react-dropzone'],

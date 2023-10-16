@@ -1,20 +1,12 @@
-const imageList: any[] = [{
-        "src": "https://source.unsplash.com/featured/800x600",
-        "alt": "Beautiful scenery I "
-    },
-    {
-        "src": "https://source.unsplash.com/featured/700x500",
-        "alt": "Beautiful scenery II "
-    },
-];
 
+declare var images: any;
 function loadImagesToDiv() {
     var galleryArea: any = document.getElementById("galleryArea");
     var listImages: any = document.getElementById("listImages");
 
-    for (let i = 0; i < imageList.length; i++) {
-        let src = imageList[i].src;
-        let caption = imageList[i].alt;
+    for (let i = 0; i < images.length; i++) {
+        let src = images[i].src;
+        let caption = images[i].alt;
         if (i == 0) {
             galleryArea.innerHTML += `
 	<figure id="start" class="gallery-display show-image" >
@@ -38,6 +30,25 @@ function loadImagesToDiv() {
 		`;
         }
 
+    }
+
+    if(images.length == 0) {
+	galleryArea.innerHTML	= `
+		<h2> Please configure by inserting images and caption
+		using images.js file </h2>
+		
+		<pre>
+		 const images = [{
+        		"src": "https://source.unsplash.com/featured/800x600",
+        		"alt": "Beautiful scenery I "
+    		},
+    		{
+        		"src": "https://source.unsplash.com/featured/700x500",
+        		"alt": "Beautiful scenery II "
+    		}
+		];
+		</pre>
+	`;
     }
 
 }

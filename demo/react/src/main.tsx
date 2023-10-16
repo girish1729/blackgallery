@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Gallery from 'gallery-react';
+import Blackgallery from 'blackgallery-react';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <div>
-    <Gallery  />
+    <Blackgallery  />
   </div>
 )

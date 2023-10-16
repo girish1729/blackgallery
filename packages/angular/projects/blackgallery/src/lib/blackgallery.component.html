@@ -1,0 +1,35 @@
+
+
+ <h1> Blackgallery </h1>
+<!-- XXX This is the gallery switcher -->
+  <nav>
+    <ul id="listImages" class="gallery-nav"> 
+   <li *ngFor="let img of imageList;index as idx"
+id={{idx}} (click) = "switchImage(idx)" [ngClass]=" img.isActive ?  'switch-image' : ''" >
+ </li>
+    </ul>
+  </nav>
+
+  <!-- Images are shown in this container on switching -->
+  <div  class="gallery-container">
+
+     <div *ngIf="imageList.length == 0">
+	{{emptyMsg}}
+     </div>
+     <div *ngFor="let img of imageList;index as idx">
+
+	<div *ngIf="idx == 0 ; else El" >
+	<figure id="start" class="gallery-display show-image" >
+		<img  src={{img.src}}  />
+  		<figcaption>{{img.alt}}</figcaption>
+	</figure>
+	</div>
+
+	<ng-template #El>
+	<figure id="idx +'-img'" [ngClass] ="img.isActive ?  'gallery-display show-image':'gallery-display'" >
+		<img  src={{img.src}}  />
+  		<figcaption>{{img.alt}}</figcaption>
+	</figure>
+	</ng-template>
+    </div>
+  </div>
