@@ -80,7 +80,7 @@ const darkMode =() => {
 	{/if}
   {#each $imageList as {src, alt, isActive}, index } 
 	{#if index == 0}
-	<figure id="start" class="gallery-display show-image" >
+	<figure id="start"  style="opacity:{ isActive ? '1' : '0'}" class="gallery-display show-image" >
 		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
 	</figure>

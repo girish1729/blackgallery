@@ -81,6 +81,7 @@ export class BlackgalleryComponent {
 	`;
 	switchImage(idx: number) {
 		for(let i = 0; i < this.imageList.length; i++) {
+
 			this.imageList[i].isActive = false;
 		}
 		this.imageList[idx].isActive = true;

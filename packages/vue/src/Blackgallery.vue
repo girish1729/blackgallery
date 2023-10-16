@@ -65,7 +65,7 @@ getRuntimeConfig () {
     <div v-for="(item,id) in imageList" :key="id">
 
      <div v-if="id == 0">
-	<figure id="start" class="gallery-display show-image" >
+	<figure id="start" :style="[ item.isActive ? {opacity: 1} : {opacity: 0}]" class="gallery-display show-image" >
 		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
 	</figure>

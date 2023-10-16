@@ -87,7 +87,8 @@ id={String(index)} onClick={() => switchImage(index)}  ></li>
 
     if(index == 0)  {
 
-	return <figure key={index} id="start" className="gallery-display show-image" >
+	return <figure key={index} id="start" style={{ opacity : isActive ? '1': '0'}}
+className="gallery-display show-image" >
 		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
 	</figure>
