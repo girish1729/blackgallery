@@ -1,9 +1,9 @@
 import React, {
     Fragment,
     useState,
+    useEffect,
     Component
 } from "react";
-import images from '../images';
 import './style.css';
 
 interface img {
@@ -14,8 +14,17 @@ interface img {
  
 function Blackgallery() {
 
+    let [imgList, setImageList] = useState < Array < img >> ( [] );
+
+useEffect(() => {
+    fetch("/config.json")
+      .then((res) => res.json())
+      .then((images) => {
+
+        	setImageList(images);
+      });
+}, []);
   
-    let [imgList, setImageList] = useState < Array < img >> ( images );
 
     const emptyMsg = `
 <h2> Please configure by inserting images and caption

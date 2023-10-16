@@ -1,5 +1,4 @@
 <script lang="ts">
- import images from '../images';
  export default {
      data() {
          return {
@@ -23,7 +22,15 @@
          }
      },
      methods: {
+
+getRuntimeConfig () {
+ fetch('/config.json').then(
+	res => res.json()).then(
+	(res) => {this.imageList = res});
+},
+
          switchImage(idx) {
+	     
              for (let i = 0; i < this.imageList.length; i++) {
                  this.imageList[i].isActive = false;
              }
@@ -32,17 +39,11 @@
              console.log("I am switching image now");
          }
      },
-     beforeMount() {
-	 this.imageList = images;
-	 console.log(images);
-         const options = {
-             saveInCookies: false,
-             label: '🌓',
-         }
-
-         const darkmode = new Darkmode(options);
-         darkmode.showWidget();
+     created() {
+	 this.getRuntimeConfig();
+	   
      }
+     
  }
 </script>
 

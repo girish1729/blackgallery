@@ -9,11 +9,11 @@
 import {
     writable
 } from "svelte/store";
-let imageList:any = [];
+const imageList  = writable([]);
 
 
 let fetchJson = fetch('config.json').then(res => res.json()).
-	then((res) => ( imageList = writable(res)));
+	then((res) => ( imageList.set(res)));
 
 const emptyMsg = `
 		<h2> Please configure by inserting images and caption
