@@ -1,5 +1,10 @@
 # Simple image gallery for Angular, Svelte, React and Vue
 
+Blackgallery is a simple image gallery that can show upto 15 images
+using simple CSS and JS.
+
+No zoom, no fancy effects.
+
 ## Source for porting
 
 Make sure you have typescript installed globally.

@@ -5,11 +5,11 @@ function loadImagesToDiv() {
         var src = images[i].src;
         var caption = images[i].alt;
         if (i == 0) {
-            galleryArea.innerHTML += "\n\t<figure id=\"start\" class=\"gallery-display show-image\" >\n\t\t<img  src=\"".concat(src, "\"   />\n  \t\t<figcaption>").concat(caption, "</figcaption>\n\t</figure>\n\t");
+            galleryArea.innerHTML += "\n\t<figure id=\"start\" class=\"gallery-display show-image\" >\n  \t\t<figcaption>".concat(caption, "</figcaption>\n\t\t<img  src=\"").concat(src, "\"   />\n\t</figure>\n\t");
             listImages.innerHTML += "\n\t\t<li id=\"".concat(i, "\" class=\"switch-image\"></li>\n\t\t");
         }
         else {
-            galleryArea.innerHTML += "\n\t<figure id=\"".concat(i, "-img\" class=\"gallery-display\" >\n\t\t<img  src=\"").concat(src, "\"   />\n  \t\t<figcaption>").concat(caption, "</figcaption>\n\t</figure>\n\t");
+            galleryArea.innerHTML += "\n\t<figure id=\"".concat(i, "-img\" class=\"gallery-display\" >\n  \t\t<figcaption>").concat(caption, "</figcaption>\n\t\t<img  src=\"").concat(src, "\"   />\n\t</figure>\n\t");
             listImages.innerHTML += "\n\t\t<li id=\"".concat(i, "\"></li>\n\t\t");
         }
     }
@@ -31,11 +31,14 @@ function switchImage() {
         var myid = this.getAttribute("id");
         var the_image = document.getElementById(myid + "-img");
         if (the_image) {
+            var start = document.getElementById("start");
+            start.style.opacity = 0;
             the_image.classList.add("show-image");
         }
         else {
-            var the_image_1 = document.getElementById("start");
-            the_image_1.classList.add("show-image");
+            var start = document.getElementById("start");
+            start.classList.add("show-image");
+            start.style.opacity = 1;
         }
     }
     ;

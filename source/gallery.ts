@@ -1,5 +1,5 @@
-
 declare var images: any;
+
 function loadImagesToDiv() {
     var galleryArea: any = document.getElementById("galleryArea");
     var listImages: any = document.getElementById("listImages");
@@ -10,8 +10,8 @@ function loadImagesToDiv() {
         if (i == 0) {
             galleryArea.innerHTML += `
 	<figure id="start" class="gallery-display show-image" >
-		<img  src="${src}"   />
   		<figcaption>${caption}</figcaption>
+		<img  src="${src}"   />
 	</figure>
 	`;
             listImages.innerHTML += `
@@ -21,8 +21,8 @@ function loadImagesToDiv() {
 
             galleryArea.innerHTML += `
 	<figure id="${i}-img" class="gallery-display" >
-		<img  src="${src}"   />
   		<figcaption>${caption}</figcaption>
+		<img  src="${src}"   />
 	</figure>
 	`;
             listImages.innerHTML += `
@@ -32,8 +32,8 @@ function loadImagesToDiv() {
 
     }
 
-    if(images.length == 0) {
-	galleryArea.innerHTML	= `
+    if (images.length == 0) {
+        galleryArea.innerHTML = `
 		<h2> Please configure by inserting images and caption
 		using images.js file </h2>
 		
@@ -70,10 +70,13 @@ function switchImage() {
         let myid = this.getAttribute("id");
         let the_image: any = document.getElementById(myid + "-img");
         if (the_image) {
+            let start: any = document.getElementById("start");
+            start.style.opacity = 0;
             the_image.classList.add("show-image");
         } else {
-            let the_image: any = document.getElementById("start");
-            the_image.classList.add("show-image");
+            let start: any = document.getElementById("start");
+            start.classList.add("show-image");
+            start.style.opacity = 1;
         }
     };
 }
