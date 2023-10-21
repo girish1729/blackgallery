@@ -59,7 +59,10 @@ export class BlackgalleryComponent {
     constructor(private http: HttpClient) {
     fetch('/assets/config.json').then(
      (res) => res.json())
-    .then((res) => this.imageList = res); 
+    .then((res) => {
+	this.imageList = res;
+        this.switchImage(0);	
+	}); 
     }
 
 

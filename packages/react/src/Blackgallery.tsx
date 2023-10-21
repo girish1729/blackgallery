@@ -14,16 +14,19 @@ interface img {
  
 function Blackgallery() {
 
-    let [imgList, setImageList] = useState < Array < img >> ( [] );
+let [imgList, setImageList] = useState < Array < img >> ( [] );
 
 useEffect(() => {
     fetch("/config.json")
       .then((res) => res.json())
       .then((images) => {
-
         	setImageList(images);
       });
 }, []);
+
+const init = () => {
+	switchImage(0);
+};
   
 
     const emptyMsg = `
@@ -44,7 +47,7 @@ useEffect(() => {
 	`;
 
 
-const	switchImage = (idx: number) => {
+const switchImage = (idx: number) => {
 		for(let i = 0; i < imgList.length; i++) {
 			imgList[i].isActive = false;
         	setImageList(prev => {
@@ -55,7 +58,6 @@ const	switchImage = (idx: number) => {
 
 		}
 		imgList[idx].isActive = true;
-		console.log(imgList[idx].isActive);
 		console.log("I am switching image now");
         	setImageList(prev => {
                     let newState = [...prev];
@@ -87,15 +89,15 @@ id={String(index)} onClick={() => switchImage(index)}  ></li>
 
     if(index == 0)  {
 
-	return <figure key={index} id="start" style={{ opacity : isActive ? '1': '0'}}
+	return <figure  key={index} id="start" style={{ opacity : isActive ? '1': '0'}}
 className="gallery-display show-image" >
-		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
+		<img onLoad={() => init()} src={src}  />
 	</figure>
 	 } else {
 	return <figure key={index} id={index +'-img'} className={isActive ? "gallery-display show-image":"gallery-display"} >
-		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
+		<img  src={src}  />
 	</figure>
       }
 

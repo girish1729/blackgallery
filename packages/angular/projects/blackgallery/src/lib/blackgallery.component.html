@@ -19,16 +19,16 @@ id={{idx}} (click) = "switchImage(idx)" [ngClass]=" img.isActive ?  'switch-imag
      <div *ngFor="let img of imageList;index as idx">
 
 	<div *ngIf="idx == 0 ; else El" >
-	<figure id="start" [ngStyle]="image.isActive ? {'opacity': '1'} : {'opacity': '0'}" class="gallery-display show-image" >
-		<img  src={{img.src}}  />
+	<figure id="start" [ngStyle]="img.isActive ? {'opacity': '1'} : {'opacity': '0'}" class="gallery-display show-image" >
   		<figcaption>{{img.alt}}</figcaption>
+		<img  src={{img.src}}  />
 	</figure>
 	</div>
 
 	<ng-template #El>
 	<figure id="idx +'-img'" [ngClass] ="img.isActive ?  'gallery-display show-image':'gallery-display'" >
-		<img  src={{img.src}}  />
   		<figcaption>{{img.alt}}</figcaption>
+		<img  src={{img.src}}  />
 	</figure>
 	</ng-template>
     </div>

@@ -26,7 +26,9 @@
 getRuntimeConfig () {
  fetch('/config.json').then(
 	res => res.json()).then(
-	(res) => {this.imageList = res});
+	(res) => {this.imageList = res;
+	 this.switchImage(0);
+	});
 },
 
          switchImage(idx) {
@@ -65,15 +67,15 @@ getRuntimeConfig () {
 
      <div v-if="id == 0">
 	<figure id="start" :style="[ item.isActive ? {opacity: 1} : {opacity: 0}]" class="gallery-display show-image" >
-		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
+		<img  :src="item.src"  />
 	</figure>
       </div>
 
       <div v-else>
 	<figure :id="id+'-img'" v-bind:class = "(item.isActive)? 'gallery-display show-image':'gallery-display'" >
-		<img  :src="item.src"  />
   		<figcaption>{{item.alt}}</figcaption>
+		<img  :src="item.src"  />
 	</figure>
       </div>
 

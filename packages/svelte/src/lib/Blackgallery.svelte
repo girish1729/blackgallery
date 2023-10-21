@@ -40,6 +40,10 @@ const switchImage = (idx) => {
     imageList.set([...$imageList]);
 };
 
+const onLoad = () => {
+	switchImage(0);
+};
+
    </script>
 
 
@@ -65,14 +69,14 @@ const switchImage = (idx) => {
   {#each $imageList as {src, alt, isActive}, index } 
 	{#if index == 0}
 	<figure id="start"  style="opacity:{ isActive ? '1' : '0'}" class="gallery-display show-image" >
-		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
+		<img  on:load={onLoad} src={src}  />
 	</figure>
 
 	{:else}
 	<figure id={index +'-img'} class="{ isActive ?  'gallery-display show-image':'gallery-display'}" >
-		<img  src={src}  />
   		<figcaption>{alt}</figcaption>
+		<img  src={src}  />
 	</figure>
 	{/if}
 

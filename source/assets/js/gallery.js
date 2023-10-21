@@ -18,6 +18,8 @@ function loadImagesToDiv() {
     }
 }
 loadImagesToDiv();
+var start = document.getElementById("start");
+start.click();
 var gallery_nav_li = document.getElementsByTagName("li");
 var gallery_img = document.getElementsByTagName("figure");
 var navli;
@@ -31,14 +33,14 @@ function switchImage() {
         var myid = this.getAttribute("id");
         var the_image = document.getElementById(myid + "-img");
         if (the_image) {
-            var start = document.getElementById("start");
-            start.style.opacity = 0;
+            var start_1 = document.getElementById("start");
+            start_1.style.opacity = 0;
             the_image.classList.add("show-image");
         }
         else {
-            var start = document.getElementById("start");
-            start.classList.add("show-image");
-            start.style.opacity = 1;
+            var start_2 = document.getElementById("start");
+            start_2.classList.add("show-image");
+            start_2.style.opacity = 1;
         }
     }
     ;

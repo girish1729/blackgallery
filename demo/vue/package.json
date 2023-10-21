@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "blackgallery-vue": "file:../../packages/vue",
+    "blackgallery-vue": "../../packages/vue",
     "vue": "^3.2.45"
   },
   "devDependencies": {

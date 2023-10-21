@@ -10,7 +10,7 @@ export default defineConfig({
     cssCodesplit: true,
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
-      name: 'BlackGallery',
+      name: 'blackgallery-vue',
       fileName: 'blackgallery'
     },
     rollupOptions: {

@@ -50,10 +50,12 @@ function loadImagesToDiv() {
 		</pre>
 	`;
     }
-
 }
 
 loadImagesToDiv();
+
+let start: any = document.getElementById("start");
+start.click();
 
 const gallery_nav_li: HTMLCollectionOf < HTMLLIElement > = document.getElementsByTagName("li");
 
