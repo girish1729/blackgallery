@@ -1,8 +1,4 @@
-<svelte:head>
-   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-</svelte:head>
 
-<svelte:window on:load={darkMode} />
 
 <script lang='ts'>
 
@@ -42,18 +38,6 @@ const switchImage = (idx) => {
     console.log(idx);
     console.log("I am switching image now");
     imageList.set([...$imageList]);
-};
-
-
-const darkMode =() => {
-    const options = {
-        backgroundColor: '#fff',
-        saveInCookies: false,
-        label: '🌓',
-    };
-
-    const darkmode = new Darkmode(options);
-    darkmode.showWidget();
 };
 
    </script>

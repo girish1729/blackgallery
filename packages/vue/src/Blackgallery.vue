@@ -41,7 +41,6 @@ getRuntimeConfig () {
      },
      created() {
 	 this.getRuntimeConfig();
-	   
      }
      
  }
